@@ -17,7 +17,7 @@ for i in range(10):
     nameList = words[0].text
     for word in words:
         inputText.send_keys(word.text)
-        time.sleep(0.4)
+        time.sleep(0.4) # Pass the speed do you want if you write 0.1 or something then it got speed like 1000 + which is massive
         inputText.send_keys(Keys.SPACE)
     time.sleep(10)
 driver.quit()
