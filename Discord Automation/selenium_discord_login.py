@@ -14,9 +14,9 @@ try:
     )
     # paste your email 
 
-    email.send_keys("")
+    email.send_keys("squidxactionwithreaction@gmail.com")
     #paste your 
-    password.send_keys("")
+    password.send_keys("465213eF")
     button = WebDriverWait(driver,10).until(
         EC.element_to_be_clickable((By.XPATH,'//button[@class="marginBottom8_fd297e button__921c5 button__201d5 lookFilled__201d5 colorBrand__201d5 sizeLarge__201d5 fullWidth__201d5 grow__201d5"]'))
     )
@@ -25,4 +25,5 @@ try:
     time.sleep(5)
 except Exception:
     print("No tag found")
+time.sleep(100)
 driver.quit()
