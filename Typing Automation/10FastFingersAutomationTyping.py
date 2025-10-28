@@ -4,20 +4,14 @@ from selenium.webdriver.common.keys import Keys
 import time 
 driver = webdriver.Chrome()
 nameList = 'YOUR NAME HERE' 
-for i in range(10):
-    
-    driver.get('https://10ff.net/login')
-    username = driver.find_element(By.ID,'username')
-    username.send_keys(':)')
-    time.sleep(1)
-    username.send_keys(Keys.ENTER)
-    time.sleep(13)
-    inputText = driver.find_element(By.TAG_NAME,'input')
-    words  = driver.find_elements(By.TAG_NAME,'span')
-    nameList = words[0].text
-    for word in words:
-        inputText.send_keys(word.text)
-        time.sleep(0.4) # Pass the speed do you want if you write 0.1 or something then it got speed like 1000 + which is massive
-        inputText.send_keys(Keys.SPACE)
-    time.sleep(10)
+driver.get('https://10fastfingers.com/typing-test/english/')
+username = driver.find_element(By.ID,'username')
+time.sleep(2)
+inputText = driver.find_element(By.ID,'inputfield')
+row = driver.find_element(By.ID, "row1")
+spans = row.find_elements(By.TAG_NAME, "span")
+for span in spans:
+    inputText.send_keys(span.text) # Pass the speed do you want if you write 0.1 or something then it got speed like 1000 + which is massive
+    inputText.send_keys(Keys.SPACE)
+time.sleep(10)
 driver.quit()

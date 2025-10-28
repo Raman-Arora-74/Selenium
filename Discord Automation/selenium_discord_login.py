@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.get('https://canary.discord.com/login')
 try:
     email = WebDriverWait(driver,10).until(
@@ -23,7 +23,7 @@ try:
     button.click()
     # add time to quit 
     time.sleep(5)
-except Exception:
+except Exception:               
     print("No tag found")
 time.sleep(100)
 driver.quit()
